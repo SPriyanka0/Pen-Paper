@@ -1,0 +1,30 @@
+.container{
+    padding: 20px;
+}
+
+.item{
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    max-width: max-content;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    gap: 20px;
+    
+}
+
+.add-to-cart{
+    background-color: white;
+    border: 1px solid #ddd;
+}
+
+.add-to-cart:hover {
+    background-color: #5c9ee9;
+    font-weight: bold;
+}
+
+.products{
+    margin: 20px;
+}
+
