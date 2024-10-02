@@ -12,7 +12,7 @@
     <div class="container">
       <div class="navbar">
         <nav class="navbar navbar-expand-lg">
-            <a class="navbar-brand" href="index.html"><img src="images/logo_pen.png" alt="logo"></a>
+            <a class="navbar-brand" href="index.html"><img class="logo-img" src="images/logo_pen.png" alt="logo"></a>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
               <ul class="navbar-nav">
                 <li class="nav-item active">
@@ -52,43 +52,57 @@
 
           <div class="products">
             <h2>Newest Products</h2>
-            <div class="row">
-                <div class="col-md-4 col-lg-3 item">
-                    <img src="images/products/crayon.jpg" alt="crayon" class="product-thumbnail">
-                    <h2 class="product-name">Crayon</h2>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+              <div class="col">
+                <div class="card">
+                  <img src="images/products/crayon.jpg" alt="crayon" class="card-img-top">
+                  <div class="card-body">
+                    <h5 class="card-title"> <h2 class="product-name">Crayon</h2></h5>
                     <p class="product-price">$10.99</p>
-                    <a href="#" class="product-link">View Details</a>
-                    <button class="add-to-cart">Add to Cart</button>
+                    <p class="card-text"></p>
+                    <a href="/Pen-Paper/pages/details.html" class="btn">View Details</a>
+                    <a href="/Pen-Paper/pages/cart.html" class="btn btn-primary">Add to cart</a>
+                  </div>
                 </div>
-                <div class="col-md-4 col-lg-3 item">
-                    <img src="images/products/folder.jpeg" alt="folder" class="product-thumbnail">
-                    <h2 class="product-name">Folder</h2>
+              </div>
+              <div class="col">
+                <div class="card">
+                  <img src="images/products/folder.jpeg" alt="Folder" class="card-img-top">
+                  <div class="card-body">
+                    <h5 class="card-title"> <h2 class="product-name">Folder</h2></h5>
                     <p class="product-price">$1.99</p>
-                    <a href="#" class="product-link">View Details</a>
-                    <button class="add-to-cart">Add to Cart</button>
+                    <p class="card-text"></p>
+                    <a href="/Pen-Paper/pages/details.html" class="btn">View Details</a>
+                    <a href="/Pen-Paper/pages/cart.html" class="btn btn-primary">Add to cart</a>
+                  </div>
                 </div>
-                <div class="col-md-4 col-lg-3 item">
-                    <img src="images/products/pen.jpeg" alt="Pen" class="product-thumbnail">
-                    <h2 class="product-name">Pen</h2>
-                    <p class="product-price">$18.99</p>
-                    <a href="#" class="product-link">View Details</a>
-                    <button class="add-to-cart">Add to Cart</button>
+              </div>
+              <div class="col">
+                <div class="card">
+                  <img src="images/products/pen.jpeg" alt="pen" class="card-img-top">
+                  <div class="card-body">
+                    <h5 class="card-title"> <h2 class="product-name">Pen</h2></h5>
+                    <p class="product-price">$.99</p>
+                    <p class="card-text"></p>
+                    <a href="/Pen-Paper/pages/details.html" class="btn">View Details</a>
+                    <a href="/Pen-Paper/pages/cart.html" class="btn btn-primary">Add to cart</a>
+                  </div>
                 </div>
-                <div class="col-md-4 col-lg-3 item">
-                    <img src=/images/products/stapler.jpeg" alt="stapler" class="product-thumbnail">
-                    <h2 class="product-name">Stapler</h2>
+              </div>
+              <div class="col">
+                <div class="card">
+                  <img src="images/products/stapler.jpeg" alt="stapler" class="card-img-top">
+                  <div class="card-body">
+                    <h5 class="card-title"> <h2 class="product-name">Stapler</h2></h5>
                     <p class="product-price">$4.99</p>
-                    <a href="#" class="product-link">View Details</a>
-                    <button class="add-to-cart">Add to Cart</button>
+                    <p class="card-text"></p>
+                    <a href="/Pen-Paper/pages/details.html" class="btn">View Details</a>
+                    <a href="/Pen-Paper/pages/cart.html" class="btn btn-primary">Add to cart</a>
+                  </div>
                 </div>
-                <div class="col-md-4 col-lg-3 item">
-                    <img src="images/products/stickynote.jpeg" alt="stickynote" class="product-thumbnail">
-                    <h2 class="product-name">Sticky notes</h2>
-                    <p class="product-price">$20.99</p>
-                    <a href="#" class="product-link">View Details</a>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
+              </div>
             </div>
+         
     
         <!-- 
         <div class="carousel">
