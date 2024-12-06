@@ -30,7 +30,7 @@ My project will sell stationary Items.
 - Body Parser
 - DBeaver
 
-##Before  running: 
+## Before  running: 
 - Node.js
 ```
 # installs fnm (Fast Node Manager)
@@ -56,7 +56,7 @@ https://dev.mysql.com/downloads/installer/
 npm i dotenv
 ```
 
-#To Run
+# To Run
 ```
 node server.js 
 ```
