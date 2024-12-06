@@ -1,0 +1,35 @@
+/*
+theme: soft pastels
+light-pink: #FADADD
+mint-green: #A9DFBF  
+soft-lavender: #D7BDE2
+
+font family
+'Dancing Script', cursive; or 'Raleway', sans-serif;
+*/
+
+.slide{
+    margin: 20px 0;
+    max-width: 100%;
+    max-height: 300px;
+    justify-content: center;
+    display: flex; 
+    align-items: center;
+    overflow: hidden;
+ 
+}
+.slide img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* .carousel{
+    max-width: 800px;
+    position: relative;
+    margin: auto;
+}
+
+.slide{
+    display: none;
+} */

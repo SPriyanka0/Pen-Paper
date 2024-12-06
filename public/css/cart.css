@@ -1,0 +1,9 @@
+.card-img-top{
+    height: 35px;
+    width: 35px;
+}
+
+.remove:hover{
+    color: rgb(213, 8, 8);
+    font-weight: bolder;
+}
