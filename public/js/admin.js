@@ -1,7 +1,13 @@
 
 
+
+
 document.addEventListener('DOMContentLoaded',()=>{
     loadProductsTable();
+    displayEditForm(false);
+
+    document.getElementById('cancelEdit').addEventListener('click',()=>{displayEditForm(false)});
+
     
 });
 
@@ -17,9 +23,51 @@ function loadProductsTable(){
             <td>${product.product_price}</td>
             <td>${product.product_quantity}</td>
             <td>${product.category_id}</td>
-            <td> <button>remove</button> <button>edit</button></td>
+            <td>
+            
+             <button class="btn btn-warning" onClick="removeProoduct('${product.product_id}')">
+            remove
+            </button> 
+            <button class="btn btn-primary" onClick="editProoduct('${product.product_id}')" >Edit</button>
+            </td>
             `;
             table.appendChild(tableRow);
         });
     }).catch((error)=> console.error("error finding products",error));
+}
+
+function removeProoduct(productId){
+    fetch(`/api/products/${productId}`,{method:'DELETE',}).then((response)=>{
+        loadProductsTable(); //reload...
+    }).catch((error)=>console.error('error deleting product',error));
+}
+
+function displayEditForm(boolean){
+    const showDiv = document.getElementById('showDiv');
+    showDiv.style.display = boolean ? 'block' : 'none';
+}
+
+function editProoduct(productId){
+    displayEditForm(true);
+    event.preventDefault();
+    const update = {
+        product_id: document.getElementById("editId").value,
+        product_name: document.getElementById("editName").value,
+        product_desc: document.getElementById("editDesc").value,
+        product_price: document.getElementById("editPrice").value,
+        product_quantity: document.getElementById("editQuantity").value,
+        product_imageURL: document.getElementById("editImageURL").value,
+        category_id: document.getElementById("editCategory").value,
+    };
+    displayEditForm(true);
+    fetch(`/api/products/${productId}`,{
+        method: 'PUT',
+        headers:{
+            'Content-Type':'application/json',
+        },
+        body: JSON.stringify(update),
+    }).then((response)=>{
+        loadProductsTable();
+        displayEditForm(false);
+    }).catch((error)=>console.error('error updating product',error));
 }

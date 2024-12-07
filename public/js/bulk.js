@@ -19,13 +19,13 @@ function addOneProduct(event){
         product_imageURL: document.getElementById("productImageURL").value,
         category_id: document.getElementById("productCategory").value,
     };
-    console.log('Sending product:', newProduct); // Debugging the request payload
     fetch('/api/products',{method:'POST',
         headers:{'Content-Type': 'application/json'},
         body: JSON.stringify(newProduct),
     }).then((response)=>{
         //add 
         response.text();
+        
     }).catch((error)=>console.error("error adding product",error));
 
 
