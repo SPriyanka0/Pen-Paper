@@ -22,3 +22,41 @@ My project will sell stationary Items.
 - HTML
 - CSS
 - Bootstrap
+- JavaScript
+- Node.js
+- Express.js
+- MySQL
+- CORS
+- Body Parser
+- DBeaver
+
+## Before  running: 
+- Node.js
+```
+# installs fnm (Fast Node Manager)
+winget install Schniz.fnm
+
+# configure fnm environment
+fnm env --use-on-cd --shell power-shell | Out-String | Invoke-Expression
+(I have found that sometimes my terminal likes to ‘forget’ node/npm. It’s super annoying but this command here makes it remember it)
+
+# download and install Node.js
+fnm use --install-if-missing 20
+
+# verifies the right Node.js version is in the environment
+node -v # should print `v20.17.0`
+
+# verifies the right npm version is in the environment
+npm -v # should print `10.8.2`
+```
+- MySQL
+https://dev.mysql.com/downloads/installer/ 
+- npm
+```
+npm i dotenv
+```
+
+# To Run
+```
+node server.js 
+```
