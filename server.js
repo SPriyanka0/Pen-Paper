@@ -73,6 +73,8 @@ app.post('/api/products', (req,res) => {
 app.put('/api/products/:id', (req,res)=>{
     const { id } = req.params;
     const{product_name, product_desc,product_imageURL,product_price, product_quantity, category_id} = req.body;
+    
+
     const sql =` UPDATE products SET
     product_name = ?, 
     product_desc = ?,

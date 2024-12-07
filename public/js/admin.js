@@ -1,13 +1,11 @@
 
 
 
-
 document.addEventListener('DOMContentLoaded',()=>{
     loadProductsTable();
     displayEditForm(false);
 
     document.getElementById('cancelEdit').addEventListener('click',()=>{displayEditForm(false)});
-
     
 });
 
@@ -49,18 +47,28 @@ function displayEditForm(boolean){
 
 function editProoduct(productId){
     displayEditForm(true);
-    event.preventDefault();
+
+    fetch(`/api/products/${productId}`).then((response)=>response.json()).then((product)=>{
+         document.getElementById("editName").value = product.product_name,
+         document.getElementById("editDesc").value = product.product_desc,
+         document.getElementById("editPrice").value = product.product_price,
+         document.getElementById("editQuantity").value = product.product_quantity,
+     document.getElementById("editImageURL").value = product.product_imageURL,
+     document.getElementById("editCategory").value = product.category_id;
+
+     document.getElementById('editProductbyID').onsubmit = function(event){
+        event.preventDefault();
+        
     const update = {
-        product_id: document.getElementById("editId").value,
-        product_name: document.getElementById("editName").value,
-        product_desc: document.getElementById("editDesc").value,
-        product_price: document.getElementById("editPrice").value,
-        product_quantity: document.getElementById("editQuantity").value,
-        product_imageURL: document.getElementById("editImageURL").value,
-        category_id: document.getElementById("editCategory").value,
-    };
-    displayEditForm(true);
-    fetch(`/api/products/${productId}`,{
+        // product_id: document.getElementById("editId").value,
+         product_name: document.getElementById("editName").value,
+         product_desc: document.getElementById("editDesc").value,
+         product_price: document.getElementById("editPrice").value,
+         product_quantity: document.getElementById("editQuantity").value,
+         product_imageURL: document.getElementById("editImageURL").value,
+         category_id: document.getElementById("editCategory").value,
+     };
+     fetch(`/api/products/${productId}`,{
         method: 'PUT',
         headers:{
             'Content-Type':'application/json',
@@ -68,6 +76,11 @@ function editProoduct(productId){
         body: JSON.stringify(update),
     }).then((response)=>{
         loadProductsTable();
-        displayEditForm(false);
+       displayEditForm(false);
     }).catch((error)=>console.error('error updating product',error));
+
+     };
+    }).catch((error)=>console.error('error edit product',error));
+
+   
 }

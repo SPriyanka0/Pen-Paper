@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="/Pen-Paper/css/navbar.css">
+    <link rel="stylesheet" href="css/navbar.css">
     <title>Products</title>
 </head>
 <body>
@@ -13,11 +13,24 @@
     <a class="navbar-brand" href="index.html"><img class="logo-img" src="images/logo_pen.png" alt="logo"></a>
     </div>
 
-      <form class="form-inline">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
+     
   </nav>
-      <p>login</p>
+      <div class="card" style="margin: 100px; padding: 20px;">
+        <form>
+          <div>
+            <h2>Login</h2>
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" id="username" class="form-control" >
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" id="password" class="form-control" >
+            </div>
+            <button type="submit" class="btn btn-primary">Log-in</button>
+            <button type="button" class="btn btn-primary"><a href="signup.html" style="color: white;">Signup</a></button>
+          </div>
+        </form>
+      </div>
 </body>
 </html>
