@@ -1,4 +1,4 @@
-const { response } = require("express");
+
 
 document.addEventListener('DOMContentLoaded',loadCartItems());
 
@@ -6,16 +6,15 @@ function loadCartItems(){
     //hardcode..to be changed after user auth setup
     const userId=1;
 
-    fetch(`/api/cart/${userId}`).then(response=>response.json()).then(
-       
-        cartItems =>{
-            let subtotal =0;
+    fetch(`/api/cart/${userId}`).then(response=>response.json()).then( cartItems =>{
+            
             const cartContainer = document.querySelector('.list-group');
 
             if(cartItems.length === 0){
                 cartContainer.innerHTML=`<p>empty</p>`;
                 return;
             }
+            let subtotal =0;
 
             cartItems.forEach(cartItem =>{
                 const itemTotal = cartItem.product_price * cartItem.item_quantity;
@@ -33,7 +32,7 @@ function loadCartItems(){
                 <span class="text-muted">$ ${itemTotal.toFixed(2)} </span>
                 `;
 
-                cartContainer.insertBefore(cartElement, document.querySelector('subtotal-list-item'));
+                cartContainer.appendChild(cartElement);
 
                 document.querySelector('.subtotal').innerText=`$ ${subtotal.toFixed(2)}`;
                 const tax = subtotal*0.0675;
@@ -54,7 +53,7 @@ function addToCart(productId){
         headers:{
             'Content-Type':'application/json'
         },
-        bod:JSON.stringify({productId,quantity})
+        body:JSON.stringify({productId,quantity})
     }).then(response => {
         //added to cart?
     }).catch(error=>console.error('error adding to cart',error));

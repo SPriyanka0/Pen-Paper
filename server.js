@@ -56,13 +56,12 @@ app.get('/api/products/:id', (req,res) => {
 
 //product - post
 app.post('/api/products', (req,res) => {
-    const{product_name, product_desc,product_imageURL,product_price, product_quantity, category_id} = req.body;
-
-    const sql = ` INSERT INTO products (product_name, product_desc,product_imageURL,product_price, 
+    const{product_id, product_name, product_desc,product_imageURL,product_price, product_quantity, category_id} = req.body;
+    const sql = ` INSERT INTO products (product_id, product_name, product_desc,product_imageURL,product_price, 
     product_quantity, category_id)
-    VALUES (?,?,?,?,?,?)`;
+    VALUES (?,?,?,?,?,?,?)`;
 
-    db.query(sql, [product_name, product_desc,product_imageURL,product_price, product_quantity, category_id], (err,result)=>{
+    db.query(sql, [product_id, product_name, product_desc,product_imageURL,product_price, product_quantity, category_id], (err,result)=>{
         if(err) {
             return res.status(500).send('error adding product');
         }
