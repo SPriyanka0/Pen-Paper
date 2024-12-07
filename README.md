@@ -60,3 +60,4 @@ npm i dotenv
 ```
 node server.js 
 ```
+#### Run on localhost port 3000
